@@ -1,0 +1,51 @@
+Problem Statement
+
+Develop a Java application using multilevel inheritance to represent hospital staff. Create a Person class, derive a Doctor class from it, and further derive a Surgeon class. Display the details of the surgeon including name, 
+specialization, hospital name, and years of experience.
+
+class Person {
+
+    String name = "Raghul";
+
+}
+
+class Doctor extends Person {
+
+    String hospital = "KSR Hospital";
+
+}
+
+class Surgeon extends Doctor {
+
+    String specialization = "General Surgeon";
+    int experience = 8;
+
+    void display() {
+
+        System.out.println("Hospital Details");
+        System.out.println("------------------------");
+        System.out.println("Name           : " + name);
+        System.out.println("Hospital       : " + hospital);
+        System.out.println("Specialization : " + specialization);
+        System.out.println("Experience     : " + experience + " Years");
+
+    }
+}
+
+public class HospitalManagement {
+
+    public static void main(String[] args) {
+
+        Surgeon s = new Surgeon();
+
+        s.display();
+
+    }
+}
+
+Output
+Hospital Details
+Name           : Raghul
+Hospital       : KSR Hospital
+Specialization : General Surgeon
+Experience     : 8 Years
