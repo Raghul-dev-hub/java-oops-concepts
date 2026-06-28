@@ -1,0 +1,67 @@
+Problem Statement
+
+Develop a Java application using an interface to implement different online payment methods. Create an interface named Payment with a method called pay(). 
+Implement the interface using different payment service classes and display the payment details.
+import java.util.*
+interface Payment {
+
+    void pay();
+
+}
+
+class GooglePay implements Payment {
+
+    String customerName = "Raghul";
+    int amount = 750;
+
+    public void pay() {
+
+        System.out.println("Payment Method : Google Pay");
+        System.out.println("Customer Name  : " + customerName);
+        System.out.println("Amount         : Rs." + amount);
+        System.out.println("Payment Status : Successful");
+
+    }
+}
+
+class PhonePe implements Payment {
+
+    String customerName = "Raghul";
+    int amount = 500;
+
+    public void pay() {
+
+        System.out.println("Payment Method : PhonePe");
+        System.out.println("Customer Name  : " + customerName);
+        System.out.println("Amount         : Rs." + amount);
+        System.out.println("Payment Status : Successful");
+
+    }
+}
+
+public class OnlinePayment {
+
+    public static void main(String[] args) {
+
+        Payment p;
+
+        p = new GooglePay();
+        p.pay();
+
+        System.out.println();
+
+        p = new PhonePe();
+        p.pay();
+
+    }
+}
+output 
+Payment Method : Google Pay
+Customer Name  : Raghul
+Amount         : Rs.750
+Payment Status : Successful
+
+Payment Method : PhonePe
+Customer Name  : Raghul
+Amount         : Rs.500
+Payment Status : Successful
