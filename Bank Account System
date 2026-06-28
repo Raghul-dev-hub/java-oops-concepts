@@ -1,0 +1,66 @@
+Problem Statement
+
+Create a Java program to perform basic banking operations using encapsulation. Store account details and display the updated balance after deposit and withdrawal.
+
+pacakage Raghul;
+import java.util.*
+class BankAccount {
+
+    private String accountHolder;
+    private int accountNumber;
+    private double balance;
+
+    public void setAccountDetails(String holder, int number) {
+        accountHolder = holder;
+        accountNumber = number;
+        balance = 0;
+    }
+
+    public void deposit(double amount) {
+        balance = balance + amount;
+    }
+
+    public void withdraw(double amount) {
+        if (amount <= balance) {
+            balance = balance - amount;
+        } else {
+            System.out.println("Insufficient Balance");
+        }
+    }
+
+    public void display() {
+        System.out.println("Account Holder : " + accountHolder);
+        System.out.println("Account Number : " + accountNumber);
+        System.out.println();
+        System.out.println("Available Balance : " + balance);
+    }
+}
+
+public class BankAccountSystem {
+
+    public static void main(String[] args) {
+
+        BankAccount account = new BankAccount();
+
+        account.setAccountDetails("Raghul", 10059);
+
+        System.out.println("Deposit Amount : 5000");
+        account.deposit(5000);
+
+        System.out.println("Withdraw Amount : 2000");
+        account.withdraw(2000);
+
+        System.out.println();
+
+        account.display();
+    }
+}
+
+Output
+Deposit Amount : 5000
+Withdraw Amount : 2000
+
+Account Holder : Raghul
+Account Number : 10059
+
+Available Balance : 3000.0
