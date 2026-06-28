@@ -1,0 +1,67 @@
+Problem Statement
+
+Create a Java application using hierarchical inheritance. Create a base class named Person and derive two classes namely Student and Faculty. 
+Display the details of both the student and the faculty.
+
+class Person {
+
+    String college = "KSR College";
+
+}
+
+class Student extends Person {
+
+    String name = "Raghul";
+    int regNo = 59;
+    String department = "ECE";
+
+    void studentDetails() {
+        System.out.println("Student Details");
+        System.out.println("----------------------");
+        System.out.println("Name       : " + name);
+        System.out.println("Register No: " + regNo);
+        System.out.println("Department : " + department);
+        System.out.println("College    : " + college);
+    }
+}
+
+class Faculty extends Person {
+
+    String facultyName = "Arun Kumar";
+    String subject = "Java Programming";
+
+    void facultyDetails() {
+        System.out.println();
+        System.out.println("Faculty Details");
+        System.out.println("----------------------");
+        System.out.println("Faculty Name : " + facultyName);
+        System.out.println("Subject      : " + subject);
+        System.out.println("College      : " + college);
+    }
+}
+
+public class CollegeManagement {
+
+    public static void main(String[] args) {
+
+        Student s = new Student();
+        Faculty f = new Faculty();
+
+        s.studentDetails();
+        f.facultyDetails();
+
+    }
+}
+
+Student Details
+----------------------
+Name       : Raghul
+Register No: 59
+Department : ECE
+College    : KSR College
+
+Faculty Details
+----------------------
+Faculty Name : Arun Kumar
+Subject      : Java Programming
+College      : KSR College
