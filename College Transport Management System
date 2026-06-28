@@ -1,0 +1,89 @@
+Problem Statement
+
+Develop a Java application to manage the College Transport Management System using composition (HAS-A relationship). Create a class named Driver to store the driver's details such as driver ID, driver name, and license number. Create another class named CollegeBus that contains a Driver object along with bus number, route, 
+and seating capacity. Display the complete information of the bus and the assigned driver.
+
+package Raghul;
+
+import java.util.*;
+
+class Driver {
+
+    int driverId;
+    String driverName;
+    String licenseNumber;
+
+    Driver(int driverId, String driverName, String licenseNumber) {
+
+        this.driverId = driverId;
+        this.driverName = driverName;
+        this.licenseNumber = licenseNumber;
+
+    }
+
+}
+
+class CollegeBus {
+
+    String busNumber;
+    String route;
+    int seats;
+    Driver driver;
+
+    CollegeBus(String busNumber, String route, int seats, Driver driver) {
+
+        this.busNumber = busNumber;
+        this.route = route;
+        this.seats = seats;
+        this.driver = driver;
+
+    }
+
+    void display() {
+
+        System.out.println("College Transport Details");
+        System.out.println("------------------------------");
+        System.out.println("Bus Number     : " + busNumber);
+        System.out.println("Route          : " + route);
+        System.out.println("Seat Capacity  : " + seats);
+
+        System.out.println();
+        System.out.println("Driver Details");
+        System.out.println("------------------------------");
+        System.out.println("Driver ID      : " + driver.driverId);
+        System.out.println("Driver Name    : " + driver.driverName);
+        System.out.println("License Number : " + driver.licenseNumber);
+
+    }
+
+}
+
+public class CollegeTransportManagement {
+
+    public static void main(String[] args) {
+
+        Driver d = new Driver(101, "Suresh", "TN45DL1234");
+
+        CollegeBus bus = new CollegeBus(
+                "TN34 AB 2059",
+                "KSR College - Erode",
+                50,
+                d);
+
+        bus.display();
+
+    }
+
+}
+
+College Transport Details
+------------------------------
+Bus Number     : TN34 AB 2059
+Route          : KSR College - Erode
+Seat Capacity  : 50
+
+Driver Details
+------------------------------
+Driver ID      : 101
+Driver Name    : Suresh
+License Number : TN45DL1234
