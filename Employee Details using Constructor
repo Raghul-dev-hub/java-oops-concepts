@@ -1,0 +1,46 @@
+Problem Statement
+
+Create a Java application to manage employee details using a parameterized constructor. The program should initialize the employee's ID,
+name, department, and salary through the constructor. Create a method to display the employee information in a well-formatted manner.
+
+class Employee {
+
+    int employeeId;
+    String employeeName;
+    String department;
+    double salary;
+
+    Employee(int id, String name, String dept, double sal) {
+        employeeId = id;
+        employeeName = name;
+        department = dept;
+        salary = sal;
+    }
+
+    void display() {
+        System.out.println("Employee Details");
+        System.out.println("-------------------------");
+        System.out.println("Employee ID   : " + employeeId);
+        System.out.println("Employee Name : " + employeeName);
+        System.out.println("Department    : " + department);
+        System.out.println("Salary        : " + salary);
+    }
+}
+
+public class EmployeeManagement {
+
+    public static void main(String[] args) {
+
+        Employee emp = new Employee(59, "Raghul", "ECE", 35000);
+
+        emp.display();
+
+    }
+}
+output
+Employee Details
+-------------------------
+Employee ID   : 59
+Employee Name : Raghul
+Department    : ECE
+Salary        : 35000.0
