@@ -1,0 +1,40 @@
+Problem Statement
+
+Design a Java application to calculate the area of different geometric shapes using method overloading. Create overloaded methods to calculate the area of a circle,
+rectangle, and triangle. Display the calculated area for each shape.
+
+class AreaCalculator {
+
+    void calculateArea(double radius) {
+        double area = 3.14 * radius * radius;
+        System.out.println("Area of Circle : " + area);
+    }
+
+    void calculateArea(int length, int breadth) {
+        int area = length * breadth;
+        System.out.println("Area of Rectangle : " + area);
+    }
+
+    void calculateArea(int base, double height) {
+        double area = 0.5 * base * height;
+        System.out.println("Area of Triangle : " + area);
+    }
+}
+
+public class AreaOverloading {
+
+    public static void main(String[] args) {
+
+        AreaCalculator obj = new AreaCalculator();
+
+        obj.calculateArea(7.0);
+        obj.calculateArea(20, 10);
+        obj.calculateArea(15, 10.0);
+
+    }
+}
+output
+
+Area of Circle : 153.86
+Area of Rectangle : 200
+Area of Triangle : 75.0
