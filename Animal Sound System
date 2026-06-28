@@ -1,0 +1,59 @@
+Problem Statement
+
+Develop a Java application to demonstrate method overriding using inheritance. Create a parent class named Animal with a method called sound(). Derive the classes Dog, Cat, and Cow from the Animal 
+class and override the sound() method in each class to display their respective sounds.
+
+package Raghul;
+
+import java.util.*;
+
+class Animal {
+
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+
+}
+
+class Dog extends Animal {
+
+    void sound() {
+        System.out.println("Dog Sound : Bark");
+    }
+
+}
+
+class Cat extends Animal {
+
+    void sound() {
+        System.out.println("Cat Sound : Meow");
+    }
+
+}
+
+class Cow extends Animal {
+
+    void sound() {
+        System.out.println("Cow Sound : Moo");
+    }
+
+}
+
+public class AnimalSoundSystem {
+
+    public static void main(String[] args) {
+
+        Dog d = new Dog();
+        Cat c = new Cat();
+        Cow cw = new Cow();
+
+        d.sound();
+        c.sound();
+        cw.sound();
+
+    }
+}
+Output
+Dog Sound : Bark
+Cat Sound : Meow
+Cow Sound : Moo
