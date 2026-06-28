@@ -1,0 +1,87 @@
+Problem Statement
+
+Develop a Java application to manage a hostel room allocation system using static members. Create a class named HostelStudent to store student details such as register number, student name, department, college name, and room number. Use a parameterized constructor to initialize the student details. Maintain a static variable to count the total number of students allocated to the hostel.
+Display the details of each student along with the total number of hostel students.
+
+package Raghul;
+
+import java.util.*;
+
+class HostelStudent {
+
+    int regNo;
+    String name;
+    String department;
+    String college;
+    int roomNo;
+
+    static int totalStudents = 0;
+
+    HostelStudent(int regNo, String name, String department, String college, int roomNo) {
+
+        this.regNo = regNo;
+        this.name = name;
+        this.department = department;
+        this.college = college;
+        this.roomNo = roomNo;
+
+        totalStudents++;
+
+    }
+
+    void display() {
+
+        System.out.println("Student Name   : " + name);
+        System.out.println("Register No    : " + regNo);
+        System.out.println("Department     : " + department);
+        System.out.println("College        : " + college);
+        System.out.println("Room Number    : " + roomNo);
+        System.out.println();
+
+    }
+
+    static void totalCount() {
+
+        System.out.println("Total Hostel Students : " + totalStudents);
+
+    }
+
+}
+
+public class HostelManagement {
+
+    public static void main(String[] args) {
+
+        HostelStudent s1 = new HostelStudent(59, "Raghul", "ECE", "KSR College", 205);
+        HostelStudent s2 = new HostelStudent(60, "TEENA", "CSE", "KSR College", 210);
+        HostelStudent s3 = new HostelStudent(61, "SIBIRAJ", "IT", "KSR College", 215);
+
+        s1.display();
+        s2.display();
+        s3.display();
+
+        HostelStudent.totalCount();
+
+    }
+
+}
+
+Student Name   : Raghul
+Register No    : 59
+Department     : ECE
+College        : KSR College
+Room Number    : 205
+
+Student Name   : TEENA
+Register No    : 60
+Department     : CSE
+College        : KSR College
+Room Number    : 210
+
+Student Name   : SIBIRAJ
+Register No    : 61
+Department     : IT
+College        : KSR College
+Room Number    : 215
+
+Total Hostel Students : 3
