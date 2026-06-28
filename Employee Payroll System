@@ -1,0 +1,60 @@
+Problem Statement
+
+Develop a Java application using an abstract class to calculate the salary of employees. Create an abstract class named Employee with an abstract method called calculateSalary(). Derive a class named Developer from the abstract class and implement the salary 
+calculation method. Display the employee details and monthly salary.
+
+package Raghul;
+
+import java.util.*;
+
+abstract class Employee {
+
+    String name = "Raghul TEENA";
+    int employeeId = 59;
+
+    abstract void calculateSalary();
+
+}
+
+class Developer extends Employee {
+
+    int basicSalary = 30000;
+    int bonus = 5000;
+
+    void calculateSalary() {
+
+        int totalSalary = basicSalary + bonus;
+
+        System.out.println("Employee Details");
+        System.out.println("------------------------");
+        System.out.println("Employee ID   : " + employeeId);
+        System.out.println("Employee Name : " + name);
+        System.out.println("Designation   : Developer");
+        System.out.println("Basic Salary  : Rs." + basicSalary);
+        System.out.println("Bonus         : Rs." + bonus);
+        System.out.println("Total Salary  : Rs." + totalSalary);
+
+    }
+
+}
+
+public class EmployeePayroll {
+
+    public static void main(String[] args) {
+
+        Developer d = new Developer();
+
+        d.calculateSalary();
+
+    }
+
+}
+
+Employee Details
+
+Employee ID   : 59
+Employee Name : Raghul TEENA
+Designation   : Developer
+Basic Salary  : Rs.30000
+Bonus         : Rs.5000
+Total Salary  : Rs.35000
