@@ -1,0 +1,43 @@
+Problem Statement
+
+Develop a Java application using inheritance to represent different types of vehicles. Create a parent class named Vehicle containing common details such as brand and speed. Derive a child class named Car that includes the model name and owner's name.
+Display all the vehicle information using the child class.
+
+class Vehicle {
+
+    String brand = "Hyundai";
+    int speed = 120;
+
+    void vehicleDetails() {
+        System.out.println("Vehicle Brand : " + brand);
+        System.out.println("Speed         : " + speed + " km/h");
+    }
+}
+
+class Car extends Vehicle {
+
+    String model = "i20";
+    String owner = "Raghul";
+
+    void carDetails() {
+        System.out.println("Model         : " + model);
+        System.out.println("Owner         : " + owner);
+    }
+}
+
+public class VehicleManagement {
+
+    public static void main(String[] args) {
+
+        Car c = new Car();
+
+        c.vehicleDetails();
+        c.carDetails();
+
+    }
+}
+Output
+Vehicle Brand : Hyundai
+Speed         : 120 km/h
+Model         : i20
+Owner         : Raghul
